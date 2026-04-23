@@ -1,0 +1,227 @@
+### 1. Responsive Webpage (HTML + CSS)
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: Arial; }
+.container { display: flex; }
+.box { flex: 1; padding: 20px; background: lightblue; margin: 5px; }
+
+@media (max-width:600px) {
+  .container { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+</div>
+
+</body>
+</html>
+
+### 2. Registration Form with Validation:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form onsubmit="return validate()">
+  Name: <input type="text" id="name"><br>
+  Email: <input type="text" id="email"><br>
+  <input type="submit">
+</form>
+
+<script>
+function validate() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  if (name == "" || email == "") {
+    alert("Fill all fields");
+    return false;
+  }
+  return true;
+}
+</script>
+
+</body>
+</html>
+
+### 3. Navbar with Sections:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+</nav>
+
+<section id="home"><h2>Home</h2></section>
+<section id="about"><h2>About</h2></section>
+
+</body>
+</html>
+
+### 4. To-Do List (Add/Delete):
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="task">
+<button onclick="addTask()">Add</button>
+<ul id="list"></ul>
+
+<script>
+function addTask() {
+  let li = document.createElement("li");
+  li.innerText = document.getElementById("task").value;
+
+  li.onclick = function() { this.remove(); }
+
+  document.getElementById("list").appendChild(li);
+}
+</script>
+
+</body>
+</html>
+
+### 5. Image Gallery with Hover:
+
+<!DOCTYPE html>
+<html>
+<style>
+img { width:150px; transition:0.3s; }
+img:hover { transform: scale(1.2); }
+</style>
+<body>
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+
+</body>
+</html>
+
+### 6. Email & Password Validation:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="email" placeholder="Email"><br>
+<input id="pass" placeholder="Password"><br>
+<button onclick="check()">Submit</button>
+
+<script>
+function check() {
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("pass").value;
+
+  if (!email.includes("@"))
+    alert("Invalid Email");
+  else if (pass.length < 6)
+    alert("Weak Password");
+  else
+    alert("Valid");
+}
+</script>
+
+</body>
+</html>
+
+### 7. Simple Quiz:
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>2 + 2 = ?</p>
+<button onclick="check(3)">3</button>
+<button onclick="check(4)">4</button>
+
+<script>
+function check(ans) {
+  if (ans == 4)
+    alert("Correct");
+  else
+    alert("Wrong");
+}
+</script>
+
+</body>
+</html>
+
+### 8. Date & Time Display:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="time"></p>
+
+<script>
+setInterval(function() {
+  document.getElementById("time").innerText = new Date();
+}, 1000);
+</script>
+
+</body>
+</html>
+
+### 9. Flexbox Layout:
+
+<!DOCTYPE html>
+<html>
+<style>
+.container { display: flex; }
+.box { background: lightgreen; padding: 20px; margin: 5px; }
+</style>
+<body>
+
+<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+</div>
+
+</body>
+</html>
+
+### 10. Mini Project (2 Pages):
+
+Page 1: index.html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My Portfolio</h2>
+<a href="about.html">Go to About</a>
+
+</body>
+</html>
+
+Page 2: about.html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>About Me</h2>
+<button onclick="show()">Click Me</button>
+
+<script>
+function show() {
+  alert("Hello!");
+}
+</script>
+
+</body>
+</html>
