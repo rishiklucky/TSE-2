@@ -1,0 +1,116 @@
+### 1. Excel Sheet + Conditional Formatting:
+
+Steps
+Create columns: Name, Marks
+Enter data
+Select Marks column
+Go to Home → Conditional Formatting → Highlight Rules → Greater Than
+
+Example: Highlight marks > 50 (Green)
+
+### 2. Pivot Table (Simple):
+
+Steps
+Select data
+Go to Insert → Pivot Table
+Drag:
+Rows → Name
+Values → Marks
+
+Shows total/average marks
+
+### 3. Dashboard with Charts:
+
+Steps
+Insert charts:
+Bar chart → comparison
+Pie chart → percentage
+Line chart → trend
+Arrange charts on one sheet
+
+Example: Student performance dashboard
+
+### 4. SQL Update & Delete:
+
+-- Update
+UPDATE Student
+SET Fee = 200000
+WHERE Name = 'CSE_Student';
+
+-- Delete
+DELETE FROM Student
+WHERE Name = 'CSE_Student';
+
+### 5. SQL JOIN (2 Tables):
+
+SELECT s.Name, c.Course
+FROM Student s
+JOIN Course c
+ON s.id = c.sid;
+
+### 6. Expense Tracker Database:
+
+CREATE TABLE Users (
+  id INT,
+  name VARCHAR(50)
+);
+
+CREATE TABLE Expenses (
+  id INT,
+  user_id INT,
+  amount INT,
+  category VARCHAR(50)
+);
+
+### 7. Data Analysis (Sorting, Filtering):
+
+Steps
+Sort → Data → Sort (ascending/descending)
+Filter → Data → Filter
+Create charts → Insert → Chart
+
+Example: Filter students with marks > 60
+
+### 8. Export Excel → Database:
+
+Steps
+Save Excel as CSV
+
+LOAD DATA INFILE 'file.csv'
+INTO TABLE Student
+FIELDS TERMINATED BY ',';
+
+### 9. Simple Form + Database:
+
+html:
+
+<form method="post" action="save.php">
+  Name: <input name="name">
+  <input type="submit">
+</form>
+
+php:
+
+<?php
+$conn = mysqli_connect("localhost","root","","test");
+$name = $_POST['name'];
+mysqli_query($conn,"INSERT INTO student(name) VALUES('$name')");
+?>
+
+### 10. Mini Project: Student Management:
+
+Features
+Add student
+View students
+Update/Delete
+
+
+Example SQL:
+CREATE TABLE Student (
+  id INT,
+  name VARCHAR(50),
+  marks INT
+);
+
+
+
